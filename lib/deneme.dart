@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+<<<<<<< HEAD
 import 'package:xxx_barkod_tara/barcode_scanner_window.dart';
 import 'package:xxx_barkod_tara/scanned_barcode_label.dart';
+=======
+>>>>>>> 4f2cacd (deneme1)
 
 class DenemeScanner extends StatefulWidget {
   const DenemeScanner({super.key});
@@ -11,6 +14,7 @@ class DenemeScanner extends StatefulWidget {
 }
 
 class _DenemeScannerState extends State<DenemeScanner> {
+<<<<<<< HEAD
   Barcode? _barcode;
   final MobileScannerController controller = MobileScannerController(
     formats: const [BarcodeFormat.qrCode],
@@ -37,10 +41,43 @@ class _DenemeScannerState extends State<DenemeScanner> {
         _barcode = barcodes.barcodes.firstOrNull;
       });
     }
+=======
+  List<String> scannedBarcodes = []; // Barkodları saklamak için liste
+  bool isCameraOpen = false;
+
+  void _toggleCamera() {
+    if (isCameraOpen) {
+      Navigator.of(context).pop(); // Modal'ı kapat
+    } else {
+      _openCameraModal(); // Modal'ı aç
+    }
+  }
+
+  void _openCameraModal() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.black,
+      builder: (BuildContext context) {
+        return CameraSheet(
+          onBarcodeScanned: (String barcode) {
+            setState(() {
+              scannedBarcodes.add(barcode); // Barkodu listeye ekle
+            });
+          },
+        );
+      },
+    ).whenComplete(() {
+      setState(() {
+        isCameraOpen = false; // Modal kapatıldığında durumu güncelle
+      });
+    });
+>>>>>>> 4f2cacd (deneme1)
   }
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     final scanWindow = Rect.fromCenter(
       center: MediaQuery.sizeOf(context).center(Offset.zero),
       width: 200,
@@ -98,6 +135,84 @@ class _DenemeScannerState extends State<DenemeScanner> {
                   Expanded(child: Center(child: _buildBarcode(_barcode))),
                 ],
               ),
+=======
+    return Scaffold(
+      appBar: AppBar(title: const Text('Barkod Tarayıcı')),
+      backgroundColor: Colors.black,
+      body: Column(
+        children: [
+          // Barkod listesini gösteren widget
+          Expanded(
+            child: ListView.builder(
+              itemCount: scannedBarcodes.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(
+                    scannedBarcodes[index],
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                );
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ElevatedButton(
+              onPressed: _toggleCamera,
+              child: Text(isCameraOpen ? 'Kamerayı Kapat' : 'Kamerayı Aç'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CameraSheet extends StatefulWidget {
+  final Function(String)
+      onBarcodeScanned; // Barkod tarandığında çağrılacak fonksiyon
+
+  const CameraSheet({super.key, required this.onBarcodeScanned});
+
+  @override
+  State<CameraSheet> createState() => _CameraSheetState();
+}
+
+class _CameraSheetState extends State<CameraSheet> {
+  MobileScannerController controller = MobileScannerController();
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  void _handleBarcode(BarcodeCapture barcodes) {
+    final String barcode = barcodes.barcodes.firstOrNull?.displayValue ?? '';
+    if (barcode.isNotEmpty) {
+      widget.onBarcodeScanned(barcode); // Barkodu üst widget'a ilet
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.6,
+      child: Column(
+        children: [
+          Expanded(
+            child: MobileScanner(
+              controller: controller,
+              onDetect: _handleBarcode,
+              fit: BoxFit.cover,
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Text(
+              'Barkod Bekleniyor...',
+              style: TextStyle(color: Colors.white),
+>>>>>>> 4f2cacd (deneme1)
             ),
           ),
         ],

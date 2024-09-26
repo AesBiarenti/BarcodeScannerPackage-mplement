@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+>>>>>>> 4f2cacd (deneme1)
 import 'package:xxx_barkod_tara/barcode_scanner_controller.dart';
 import 'package:xxx_barkod_tara/barcode_scanner_listview.dart';
 import 'package:xxx_barkod_tara/barcode_scanner_pageview.dart';
@@ -11,10 +15,19 @@ import 'package:xxx_barkod_tara/mobile_scanner_overlay.dart';
 
 void main() {
   runApp(
+<<<<<<< HEAD
     MaterialApp(
       theme: ThemeData(brightness: Brightness.dark),
       title: 'Mobile Scanner Example',
       home: const MyHome(),
+=======
+    ProviderScope(
+      child: MaterialApp(
+        theme: ThemeData(brightness: Brightness.dark),
+        title: 'Mobile Scanner Example',
+        home: const MyHome(),
+      ),
+>>>>>>> 4f2cacd (deneme1)
     ),
   );
 }
@@ -116,7 +129,11 @@ class MyHome extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
+<<<<<<< HEAD
                     builder: (context) => BarcodeScannerWithOverlay(),
+=======
+                    builder: (context) => const BarcodeScannerWithOverlay(),
+>>>>>>> 4f2cacd (deneme1)
                   ),
                 );
               },

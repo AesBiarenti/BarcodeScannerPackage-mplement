@@ -37,6 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.6
   mobile_scanner: ^5.1.1
   image_picker: ^1.1.2
+<<<<<<< HEAD
+=======
+  flutter_riverpod: ^2.5.1
+>>>>>>> 4f2cacd (deneme1)
 
 dev_dependencies:
   flutter_test:
