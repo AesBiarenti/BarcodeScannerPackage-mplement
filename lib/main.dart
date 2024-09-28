@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 >>>>>>> 4f2cacd (deneme1)
@@ -21,13 +22,31 @@ void main() {
       title: 'Mobile Scanner Example',
       home: const MyHome(),
 =======
+=======
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mobile_scanner_app_denemesi/barcode_scanner_controller.dart';
+import 'package:mobile_scanner_app_denemesi/barcode_scanner_listview.dart';
+import 'package:mobile_scanner_app_denemesi/barcode_scanner_pageview.dart';
+import 'package:mobile_scanner_app_denemesi/barcode_scanner_returning_image.dart';
+import 'package:mobile_scanner_app_denemesi/barcode_scanner_window.dart';
+import 'package:mobile_scanner_app_denemesi/barcode_scanner_zoom.dart';
+import 'package:mobile_scanner_app_denemesi/deneme.dart';
+import 'package:mobile_scanner_app_denemesi/home_page.dart';
+import 'package:mobile_scanner_app_denemesi/mobile_scanner_overlay.dart';
+
+void main() {
+  runApp(
+>>>>>>> dc8de84 (28-9-2024)
     ProviderScope(
       child: MaterialApp(
         theme: ThemeData(brightness: Brightness.dark),
         title: 'Mobile Scanner Example',
         home: const MyHome(),
       ),
+<<<<<<< HEAD
 >>>>>>> 4f2cacd (deneme1)
+=======
+>>>>>>> dc8de84 (28-9-2024)
     ),
   );
 }
@@ -130,10 +149,14 @@ class MyHome extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
 <<<<<<< HEAD
+<<<<<<< HEAD
                     builder: (context) => BarcodeScannerWithOverlay(),
 =======
                     builder: (context) => const BarcodeScannerWithOverlay(),
 >>>>>>> 4f2cacd (deneme1)
+=======
+                    builder: (context) => const BarcodeScannerWithOverlay(),
+>>>>>>> dc8de84 (28-9-2024)
                   ),
                 );
               },

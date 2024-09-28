@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "xxx_barkod_tara",
     "short_name": "xxx_barkod_tara",
+=======
+    "name": "mobile_scanner_app_denemesi",
+    "short_name": "mobile_scanner_app_denemesi",
+>>>>>>> dc8de84 (28-9-2024)
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

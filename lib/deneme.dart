@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 <<<<<<< HEAD
@@ -5,6 +6,12 @@ import 'package:xxx_barkod_tara/barcode_scanner_window.dart';
 import 'package:xxx_barkod_tara/scanned_barcode_label.dart';
 =======
 >>>>>>> 4f2cacd (deneme1)
+=======
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
+>>>>>>> dc8de84 (28-9-2024)
 
 class DenemeScanner extends StatefulWidget {
   const DenemeScanner({super.key});
@@ -14,6 +21,7 @@ class DenemeScanner extends StatefulWidget {
 }
 
 class _DenemeScannerState extends State<DenemeScanner> {
+<<<<<<< HEAD
 <<<<<<< HEAD
   Barcode? _barcode;
   final MobileScannerController controller = MobileScannerController(
@@ -44,6 +52,11 @@ class _DenemeScannerState extends State<DenemeScanner> {
 =======
   List<String> scannedBarcodes = []; // Barkodları saklamak için liste
   bool isCameraOpen = false;
+=======
+  List<String> scannedBarcodes = []; // Barkodları saklamak için liste
+  bool isCameraOpen = false;
+  bool canScan = true; // Barkod tarama izni kontrolü
+>>>>>>> dc8de84 (28-9-2024)
 
   void _toggleCamera() {
     if (isCameraOpen) {
@@ -61,9 +74,19 @@ class _DenemeScannerState extends State<DenemeScanner> {
       builder: (BuildContext context) {
         return CameraSheet(
           onBarcodeScanned: (String barcode) {
+<<<<<<< HEAD
             setState(() {
               scannedBarcodes.add(barcode); // Barkodu listeye ekle
             });
+=======
+            if (canScan) {
+              setState(() {
+                scannedBarcodes.add(barcode); // Barkodu listeye ekle
+                canScan = false; // Tarama işlemini beklemeye al
+              });
+              _startScanDelay(); // 2 saniye bekleme
+            }
+>>>>>>> dc8de84 (28-9-2024)
           },
         );
       },
@@ -72,11 +95,24 @@ class _DenemeScannerState extends State<DenemeScanner> {
         isCameraOpen = false; // Modal kapatıldığında durumu güncelle
       });
     });
+<<<<<<< HEAD
 >>>>>>> 4f2cacd (deneme1)
+=======
+  }
+
+  // Tarama işlemini 2 saniye geciktirmek için zamanlayıcı
+  void _startScanDelay() {
+    Timer(const Duration(seconds: 2), () {
+      setState(() {
+        canScan = true; // 2 saniye sonra tekrar tarama yapılabilir
+      });
+    });
+>>>>>>> dc8de84 (28-9-2024)
   }
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
 <<<<<<< HEAD
     final scanWindow = Rect.fromCenter(
       center: MediaQuery.sizeOf(context).center(Offset.zero),
@@ -136,6 +172,8 @@ class _DenemeScannerState extends State<DenemeScanner> {
                 ],
               ),
 =======
+=======
+>>>>>>> dc8de84 (28-9-2024)
     return Scaffold(
       appBar: AppBar(title: const Text('Barkod Tarayıcı')),
       backgroundColor: Colors.black,
@@ -212,7 +250,10 @@ class _CameraSheetState extends State<CameraSheet> {
             child: Text(
               'Barkod Bekleniyor...',
               style: TextStyle(color: Colors.white),
+<<<<<<< HEAD
 >>>>>>> 4f2cacd (deneme1)
+=======
+>>>>>>> dc8de84 (28-9-2024)
             ),
           ),
         ],

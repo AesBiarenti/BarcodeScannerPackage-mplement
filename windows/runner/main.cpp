@@ -27,7 +27,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
   FlutterWindow window(project);
   Win32Window::Point origin(10, 10);
   Win32Window::Size size(1280, 720);
+<<<<<<< HEAD
   if (!window.Create(L"xxx_barkod_tara", origin, size)) {
+=======
+  if (!window.Create(L"mobile_scanner_app_denemesi", origin, size)) {
+>>>>>>> dc8de84 (28-9-2024)
     return EXIT_FAILURE;
   }
   window.SetQuitOnClose(true);

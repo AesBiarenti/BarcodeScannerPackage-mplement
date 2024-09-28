@@ -5,6 +5,7 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 
+<<<<<<< HEAD
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file("local.properties")
 if (localPropertiesFile.exists()) {
@@ -25,6 +26,10 @@ if (flutterVersionName == null) {
 
 android {
     namespace = "com.example.xxx_barkod_tara"
+=======
+android {
+    namespace = "com.example.mobile_scanner_app_denemesi"
+>>>>>>> dc8de84 (28-9-2024)
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -33,6 +38,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
+<<<<<<< HEAD
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.xxx_barkod_tara"
@@ -42,6 +48,21 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
+=======
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId = "com.example.mobile_scanner_app_denemesi"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+>>>>>>> dc8de84 (28-9-2024)
     }
 
     buildTypes {

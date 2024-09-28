@@ -5,10 +5,14 @@
 
 version:
 <<<<<<< HEAD
+<<<<<<< HEAD
   revision: "b0850beeb25f6d5b10426284f506557f66181b36"
 =======
   revision: "2663184aa79047d0a33a14a3b607954f8fdd8730"
 >>>>>>> 4f2cacd (deneme1)
+=======
+  revision: "2663184aa79047d0a33a14a3b607954f8fdd8730"
+>>>>>>> dc8de84 (28-9-2024)
   channel: "stable"
 
 project_type: app
@@ -17,6 +21,7 @@ project_type: app
 migration:
   platforms:
     - platform: root
+<<<<<<< HEAD
 <<<<<<< HEAD
       create_revision: b0850beeb25f6d5b10426284f506557f66181b36
       base_revision: b0850beeb25f6d5b10426284f506557f66181b36
@@ -39,6 +44,8 @@ migration:
       create_revision: b0850beeb25f6d5b10426284f506557f66181b36
       base_revision: b0850beeb25f6d5b10426284f506557f66181b36
 =======
+=======
+>>>>>>> dc8de84 (28-9-2024)
       create_revision: 2663184aa79047d0a33a14a3b607954f8fdd8730
       base_revision: 2663184aa79047d0a33a14a3b607954f8fdd8730
     - platform: android
@@ -59,7 +66,10 @@ migration:
     - platform: windows
       create_revision: 2663184aa79047d0a33a14a3b607954f8fdd8730
       base_revision: 2663184aa79047d0a33a14a3b607954f8fdd8730
+<<<<<<< HEAD
 >>>>>>> 4f2cacd (deneme1)
+=======
+>>>>>>> dc8de84 (28-9-2024)
 
   # User provided section
 

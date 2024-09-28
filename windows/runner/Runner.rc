@@ -90,12 +90,21 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
+<<<<<<< HEAD
             VALUE "FileDescription", "xxx_barkod_tara" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "xxx_barkod_tara" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
             VALUE "OriginalFilename", "xxx_barkod_tara.exe" "\0"
             VALUE "ProductName", "xxx_barkod_tara" "\0"
+=======
+            VALUE "FileDescription", "mobile_scanner_app_denemesi" "\0"
+            VALUE "FileVersion", VERSION_AS_STRING "\0"
+            VALUE "InternalName", "mobile_scanner_app_denemesi" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
+            VALUE "OriginalFilename", "mobile_scanner_app_denemesi.exe" "\0"
+            VALUE "ProductName", "mobile_scanner_app_denemesi" "\0"
+>>>>>>> dc8de84 (28-9-2024)
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
